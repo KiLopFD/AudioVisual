@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 80%;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+        0 0 2.5px #fff,
+        0 0 5px #fff,
+        0 0 10px #228dff,
+        0 0 20px #228dff,
+        0 0 30px #228dff;
+    z-index: 20;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.float {
+    animation: floating 3s infinite ease-in-out;
+}
+
+
+#container {
+    position: relative;
+    background: black;
+    position: relative;
+    height: 100vh;
+    min-width: 100%;
+    width: auto;
+    z-index: 0;
+}
+
+.inner-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+#canvas1 {
+    width: fit-content;
+    height: 800px;
+    display: block;
+    margin: 0 auto;
+    /*filter: blur(10px) contrast(10);*/
+    animation: rotate 10s linear infinite;
+    position: relative;
+}
+
+#audio1 {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#fileupload {
+    color: white;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.bg-wrap,
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+    opacity: 0.7;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+.neon-box {
+    width: 200px;
+    /* Set the width of the box */
+    height: 200px;
+    /* Set the height of the box */
+    /* Set the background color of the box */
+    border-radius: 10px;
+    /* Set border radius for rounded corners */
+    box-shadow:
+        0 0 10px #00fff9,
+        /* Cyan */
+        0 0 20px #00fff9,
+        /* Cyan */
+        0 0 30px #00fff9,
+        /* Cyan */
+        0 0 40px #00fff9,
+        /* Cyan */
+        0 0 70px #00fff9,
+        /* Cyan */
+        0 0 80px #00fff9,
+        /* Cyan */
+        0 0 100px #00fff9,
+        /* Cyan */
+        0 0 150px #00fff9;
+    /* Cyan */
+}
+
+.contact {
+    position: absolute;
+    bottom: 5rem;
+    right: 2rem;
+    background-color: rgb(29, 8, 36);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    z-index: 30;
+
+    & .wrap-ctn {
+        cursor: pointer;
+        overflow: hidden;
+        background-color: rgb(126, 57, 149);
+        margin-bottom: 0.3rem;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        width: 3.2rem;
+        margin-left: auto;
+        transition: all .5s ease-in-out;
+
+        & svg {
+            background-color: rgb(29, 8, 36);
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            stroke: aliceblue;
+            transition: all .5s ease-in-out;
+        }
+
+        & p {
+            /* display: none; */
+            color: white;
+            opacity: 0;
+            position: absolute;
+            right: -100%;
+            transition: all .5s ease-in-out;
+        }
+
+    }
+
+    & .wrap-ctn:hover {
+        cursor: pointer;
+        overflow: hidden;
+        background-color: rgb(126, 57, 149);
+        margin-bottom: 0.3rem;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        width: 18rem;
+        transition: all .5s ease-in-out;
+        position: relative;
+
+        & svg {
+            background-color: rgb(29, 8, 36);
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            stroke: aliceblue;
+            transition: all .5s ease-in-out;
+        }
+
+        & p {
+            /* display: block; */
+            color: white;
+            opacity: 1;
+            position: absolute;
+            right: 0;
+            transition: all .95s ease-in-out;
+            text-align: center;
+            width: 100%;
+            padding-left: 0.2rem;
+        }
+
+    }
+}
